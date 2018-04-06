@@ -8,7 +8,7 @@ This [Ruby on Racetracks](http://www.rubyonracetracks.com/) tutorial provides an
 * You should be familiar with the process of creating a new Rails app.
 
 ## Getting Started
-* Use the reset.sh script to enter a Docker container based on one of my rbenv-general Docker images.
+* Use the reset.sh script to enter a Docker container based on one of my rails-general Docker images.
 * Enter the command "gem install generic_app".
 * Enter the following commands:
 ```
