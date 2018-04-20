@@ -1,6 +1,6 @@
 # Rails Neutrino Tutorial
 
-This [Ruby on Racetracks](http://www.rubyonracetracks.com/) tutorial provides an introduction to my [Rails Neutrino](https://github.com/jhsu802701/rails_neutrino_5) scripts, which AUTOMATICALLY generate a Ruby on Rails app from scratch.  This is the tool used to generate the Rails template app used by my [Generic App](https://github.com/jhsu802701/generic_app) gem.
+This [Ruby on Racetracks](http://www.rubyonracetracks.com/) tutorial provides an introduction to my [Rails Neutrino](https://github.com/rubyonracetracks/rails_neutrino_5) scripts, which AUTOMATICALLY generate a Ruby on Rails app from scratch.  This is the tool used to generate the Rails template app used by my [Generic App](https://github.com/rubyonracetracks/generic_app) gem.
 
 ## Prerequisites
 * Docker should be installed.  This is covered in the [Docker Tutorial](https://github.com/rubyonracetracks/tutorial-docker-stretch).
