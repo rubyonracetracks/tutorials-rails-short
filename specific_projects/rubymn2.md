@@ -16,22 +16,62 @@ cd jhsu802701
 git clone https://github.com/jhsu802701/docker-debian-stretch.git
 cd docker-debian-stretch
 ```
-* Create the files for using a Docker container based on the rbenv-rubymn2 Docker image.
+* Create the files for using a Docker container based on the rails-rubymn2 Docker image.
   * If you are using 64-bit Linux, enter the following command:
   ```
-  sh rbenv-rubymn2.sh
+  sh rails-rubymn2.sh
   ```
   * If you are using 32-bit Linux, enter the following command:
   ```
-  sh 32rbenv-rubymn2.sh
+  sh 32rails-rubymn2.sh
   ```
 * Enter the following command to enter the directory for using the development image:
 ```
-cd rbenv-rubymn2
+cd rails-rubymn2
 ```
 * You will be asked about your desired offset for the port numbers. Enter "3".
-* Download the rbenv-rubymn2 Docker image and start a Docker container based on it by entering the following command:
+* Download the rails-rubymn2 Docker image and start a Docker container based on it by entering the following command:
 ```
 sh download_new_image.sh
 ```
 * In a few minutes, you will be automatically logged into the Docker container based on this Docker image.
+
+## Setting Up the App
+* In the rails-adoptatree Docker container, enter the command "tmux" to start a tmux window.
+* Enter the following commands:
+```
+git clone https://github.com/jhsu802701/rubymn2.git
+cd rubymn2
+sh build_fast.sh; sh server.sh
+```
+* When you are prompted for the username and password, just press Enter to use the default values.  
+* The build_fast.sh script installs the gems, configures the PostgreSQL database, and runs the tests. This process takes just a few minutes. If all goes well, all of the tests will pass.
+* Note that your database username and password are now stored in the config/application.yml file in your app.
+
+## Viewing the App
+* Once the server is running, go to the URL http://localhost:3003/ in your web browser in SparkyLinux to view the Ruby.MN app.
+* NOTE: The ports.txt file in the shared directory shows which ports in desktop Linux correspond to the critical ports in the app in Docker.  Port 3000 in Docker equates to port 3003 in the desktop Linux system.
+
+## Viewing the App's Database
+* Open pgAdmin in SparkyLinux to view the data in the new Ruby.MN app.
+* In the upper left corner of the pgAdmin window, click on the plug icon to add a server.
+* Fill in the following server parameters:
+  * Name: rubymn2
+  * Host: localhost
+  * Port: 15435
+  * Username: username_db_rubymn2
+  * Password: long_way_stinks
+* NOTE 1: The config/application.yml file contains the username and password.
+* NOTE 2: The ports.txt file in the shared directory shows which ports in the host correspond to the critical ports in the app in Docker.  Port 5432 in Docker equates to port 15435 in the desktop Linux system.
+* In the Object browser, go to Server Groups -> Servers -> rubymn2 -> Databases -> db_rubymn2_dev -> schemas -> public - Tables.  Right-click on the desired object and go to View Data -> View All Rows.  You can now see the data.
+
+## Entering Commands
+* In the Docker container, press Ctrl-b and then "c" to create a new tmux window.
+* Enter the command "cd rubymn2".
+* Use this new tmux window (Window 1) for entering commands.  The original tmux window (Window 0) is dedicated to the Rails server.
+
+## Mail Server
+* In Window 1 of the Docker container, enter the command "sh mailcatcher.sh".  This runs the mail server.
+* Go to the URL http://localhost:1081/ in your web browser in SparkyLinux to view the development environment emails.  This email interface simulates the user experience.
+* NOTE: The ports.txt file in the shared directory shows which ports in the host correspond to the critical ports in the app in Docker.  Port 1080 in Docker equates to port 1081 in the desktop Linux system.
+* In the local browser window at http://localhost:3003/, sign up for an account.  A new email message will appear at ttp://localhost:1081/.  You can click on the link in the message to confirm your registration.
