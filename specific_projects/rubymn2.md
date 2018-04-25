@@ -75,3 +75,12 @@ sh build_fast.sh; sh server.sh
 * Go to the URL http://localhost:1081/ in your web browser in SparkyLinux to view the development environment emails.  This email interface simulates the user experience.
 * NOTE: The ports.txt file in the shared directory shows which ports in the host correspond to the critical ports in the app in Docker.  Port 1080 in Docker equates to port 1081 in the desktop Linux system.
 * In the local browser window at http://localhost:3003/, sign up for an account.  A new email message will appear at http://localhost:1081/.  You can click on the link in the message to confirm your registration.
+
+## Testing the Code
+* In Window 1 of the Docker container, enter the command "sh test_code.sh", which is executed in the build_fast.sh script.  This test_code.sh script runs the brakeman, sandi_meter, bundle-audit, rubocop, rails_best_practices, and gemsurance analysis tools.
+* Note that the above tools may flag parts of your code even if all of the build tests pass.  The issues flagged by these tools won't stop your app from working but will point to security vulnerabilities and code that is not optimally written.
+* The brakeman and bundle-audit tools will warn you of security vulnerabilities.  The sandi_meter, rubocop, and rails_best_practices tools warn of lower quality code.  The gemsurance tool warns you of outdated gems and gems with security vulnerabilities.  Its results are printed at log/gemsurance_report.html.
+
+## Outlining the Code
+* In Window 1 of the Docker container, enter the command "outline.sh", which is executed in the build_fast.sh script.
+* This outline.sh script runs the annotate tool (which adds comments listing object parameters to key files), generates outlines of the app in the notes directory, and generates block diagrams of your app in the log directory.
