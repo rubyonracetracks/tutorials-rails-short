@@ -78,7 +78,7 @@ sh build_fast.sh; sh server.sh
 
 ## Testing the Code
 * In Window 1 of the Docker container, enter the command "sh test_code.sh", which is executed in the build_fast.sh script.  This test_code.sh script runs the brakeman, sandi_meter, bundle-audit, rubocop, rails_best_practices, and gemsurance analysis tools.
-* Note that the above tools may flag parts of your code even if all of the build tests pass.  The issues flagged by these tools won't stop your app from working but will point to security vulnerabilities and code that is not optimally written.
+* Note that the above tools may flag parts of the code even if all of the build tests (from MiniTest) pass.  The issues flagged by these tools won't stop your app from working but will point to security vulnerabilities and to code that is not optimally written.
 * The brakeman and bundle-audit tools will warn you of security vulnerabilities.  The sandi_meter, rubocop, and rails_best_practices tools warn of lower quality code.  The gemsurance tool warns you of outdated gems and gems with security vulnerabilities.  Its results are printed at log/gemsurance_report.html.
 
 ## Outlining the Code
