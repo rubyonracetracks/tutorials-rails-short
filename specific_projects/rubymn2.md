@@ -72,9 +72,9 @@ sh build_fast.sh; sh server.sh
 
 ## Mail Server
 * In Window 1 of the Docker container, enter the command "sh mailcatcher.sh".  This runs the mail server.
-* Go to the URL http://localhost:1081/ in your web browser in SparkyLinux to view the development environment emails.  This email interface simulates the user experience.
-* NOTE: The ports.txt file in the shared directory shows which ports in the host correspond to the critical ports in the app in Docker.  Port 1080 in Docker equates to port 1081 in the desktop Linux system.
-* In the local browser window at http://localhost:3003/, sign up for an account.  A new email message will appear at http://localhost:1081/.  You can click on the link in the message to confirm your registration.
+* Go to the URL http://localhost:1083/ in your web browser in SparkyLinux to view the development environment emails.  This email interface simulates the user experience.
+* NOTE: The ports.txt file in the shared directory shows which ports in the host correspond to the critical ports in the app in Docker.  Port 1080 in Docker equates to port 1083 in the desktop Linux system.
+* In the local browser window at http://localhost:3003/, sign up for an account.  A new email message will appear at http://localhost:1083/.  You can click on the link in the message to confirm your registration.
 
 ## Testing the Code
 * In Window 1 of the Docker container, enter the command "sh test_code.sh", which is executed in the build_fast.sh script.  This test_code.sh script runs the brakeman, sandi_meter, bundle-audit, rubocop, rails_best_practices, and gemsurance analysis tools.
