@@ -1,6 +1,6 @@
-# GenericApp Tutorial
+# Generic App Tutorial
 
-This [Ruby on Racetracks](http://www.rubyonracetracks.com/) tutorial provides an introduction to my [GenericApp](https://github.com/rubyonracetracks/generic_app) gem, which allows you to start a new app based on an existing Rails template.  In just seconds, you can have a high quality app with comprehensive tests, static pages, user authentication, and admin authentication already provided.
+This [Ruby on Racetracks](http://www.rubyonracetracks.com/) tutorial provides an introduction to my [Generic App](https://github.com/rubyonracetracks/generic_app) gem, which allows you to start a new app based on an existing Rails template.  In just seconds, you can have a high quality app with comprehensive tests, static pages, user authentication, and admin authentication already provided.
 
 ## Prerequisites
 * Docker should be installed.  This is covered in the [Docker Tutorial](https://github.com/rubyonracetracks/tutorial-docker-stretch).
